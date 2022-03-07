@@ -1,0 +1,34 @@
+*{
+    background-color: gold;
+}
+
+hr{
+    border: none;
+    background-color: black;
+    height: 15px;
+}
+
+.poglavlje h1,.poglavlje h2{
+    color: teal;
+}
+
+#naslov {
+    color: purple;
+}
+
+.poglavlje:nth-of-type(even){
+    background-color: skyblue;
+}
+
+.poglavlje h1, .poglavlje h2, .poglavlje img, .poglavlje p, .poglavlje i{
+    background-color: inherit;
+}
+
+.prviOdlomak::first-letter {
+    background-color: lemonchiffon;
+    font-size: 3rem;
+}
+
+.drugiOdlomak::first-letter {
+    font-size: 2rem;
+}
