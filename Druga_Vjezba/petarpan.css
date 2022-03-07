@@ -1,0 +1,67 @@
+*{
+    background-color: burlywood;
+}
+
+h1{
+    color: salmon;
+}
+
+h1, h2{
+    background-color: olive;
+}
+
+hr{
+    border: none;
+    background-color: brown;
+}
+
+#naslov, #naslov>h1, #naslov>h2{
+    background-color: darkolivegreen;
+}
+
+#naslov{
+    width: 50%;
+}
+
+#sadržaj{
+    background-color: transparent;
+    color: brown;
+}
+
+.poglavlje, .poglavlje>h1, .poglavlje>h2{
+    background-color: palegoldenrod;
+}
+
+.poglavlje{
+    width: 50%;
+}
+
+li:nth-of-type(odd){
+    background-color: sienna;
+    color:wheat;
+}
+
+li:nth-of-type(even){
+    background-color: wheat;
+    color: sienna;
+}
+
+li a{
+    background-color: inherit;
+    color: inherit;
+}
+
+li::marker{
+    content: "\00bb";
+    color: brown;
+}
+
+li a:hover{
+    color: salmon;
+    font-size: 20px;
+}
+
+.prvi::first-letter{
+    background-color: thistle;
+    font-size: 25px;
+}
