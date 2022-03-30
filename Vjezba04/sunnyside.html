@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunnyside</title>
+    <style>
+        body{
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            gap: 0;
+            display: grid;
+
+            grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+        }
+
+        .header{
+            grid-area: header;
+            color: white;
+            display: flexbox;
+            flex-direction: row;
+            position: relative;
+        }
+
+        .main{
+            grid-area: main;
+        }
+
+        .footer{
+            grid-area: footer;
+            color: black;
+            display: flex;
+            flex-direction: column;
+        }
+       
+        .content{
+            display: grid;
+            min-height: 50%;
+            margin: 0;
+            padding: 0;
+            grid-template-areas: 
+            "text1 image1"
+            "image2 text2"
+            "image3 image4";
+        } 
+
+        .text1{
+            grid-area: text1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text2{
+            grid-area: text2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #text3{
+            z-index: 100;
+            position: absolute;
+            bottom: 50px;
+            left: 300px;
+        }
+
+        .image1{
+            grid-area: image1;
+        }
+
+        .image2{
+            grid-area: image2;
+        }
+
+        .image3{
+            grid-area: image3;
+        }
+
+        .image4{
+            grid-area: image4;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        #image {
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        #image5{
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+        }
+
+        #text {
+            z-index: 100;
+            position: absolute;
+            top: 50px;
+            left: 300px;
+        }
+
+        #menu{
+            z-index: 100;
+            position: absolute;
+            top: 50px;
+            right: 300px;
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+        }
+
+        #centerText{
+            z-index: 100;
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .firstRow{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+        }
+
+        .contentFooter{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .secondRow{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .thirdRow{
+            background-color: olivedrab;
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .middleText{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        @media screen and(max-width: 700px){
+            body{
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
+
+                display: grid;
+
+                grid-template-areas: 
+                "header"
+                "main"
+                "footer";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 id="text">sunnyside</h1>
+        <ul id="menu">
+            <li><a href="">About</a> </li>
+            <li><a href="">Services</a> </li>
+            <li><a href="">Projects</a> </li>
+            <li><a href="">Contact</a> </li>
+        </ul>
+        <h1 id="centerText">WE ARE CREATIVES</h1>
+        <img id="image" src="img/orange-header.jpg" href="orange">
+    </div>
+    <div class="main">
+        <div class="content"> 
+                <div class="text1"><h1>Transform your brand.</h1> <p>We are a full-service creative agency<br>
+                    specializing in helping brands grow fast.<br>
+                    Engage your clients through compelling<br>
+                    visuals that do most of the marketing for you</p><h2>LEARN MORE</h2></div>
+                <div class="image1"><img src="img/egg.jpg" alt="egg"></div> 
+                <div class="image2"><img src="img/stand-out.jpg" alt="stand out"></div>
+                <div class="text2"><h1>Stand out to the right audience.</h1> <p>Using a collaborative formula of designers, <br>
+                    researchers, photographers, videographers, <br>
+                    and copywriters, we'll build and extend your <br>
+                    brand indigital places</p><h2>LEARN MORE</h2></div>
+                <div class="image3"><img src="img/cherry.jpg" alt="cherry"></div>
+                <div class="image4"><img src="img/tangerina.jpg" alt="tangerina"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="firstRow">
+            <div class="contentFooter">
+                <img id="image5" src="img/image-emily.jpg" href="emily">
+                <p>We put our trust in Sunnyside and they delivered, <br>
+                    making sure our needs were meets and <br>
+                    deadlines were always hit</p>
+                <h1>Emily R.</h1>
+                <h3>Marketing Director</h3>
+            </div>
+            <div class="contentFooter">
+                <img id="image5" src="img/image-thomas.jpg" href="thomas">
+                <p>Sunnyside's enthusiasm coupled with their keen <br>
+                    interesy in our brand's success made it a <br>
+                    satisfaying and enjoyable experience</p>
+                <h1>Thomas S.</h1>
+                <h3>Chief Operating Officer</h3>
+            </div>
+            <div class="contentFooter">
+                <img id="image5" src="img/image-jennie.jpg" href="thomas">
+                <p>Increadible end result! Our sales increased over <br>
+                    40% when we worked with Sunnyside. Highly <br>
+                    recommended!</p>
+                <h1>Jennie F.</h1>
+                <h3>Business Owner</h3>
+            </div>
+        </div>
+        <div class="secondRow">
+            <img id="image" src="img/milkbottles.jpg" href="milkbottles">
+            <img id="image" src="img/orange.jpg" href="orange">
+            <img id="image" src="img/cone.jpg" href="cone">
+            <img id="image" src="img/sugarcubes.jpg" href="sugarcubes">
+        </div>
+        <div class="thirdRow">
+            <h1>sunnyside</h1>
+            <div class="middleText">
+                <h3>About</h3>
+                <h3>Services</h3>
+                <h3>Projects</h3>
+            </div>>
+        </div>
+    </div>
+</body>
+</html>
