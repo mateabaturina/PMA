@@ -8,7 +8,7 @@
     <style>
         body{
             background-color: blue;
-            padding: 50px;
+            padding: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,13 +19,15 @@
             min-width: 90%;
             background-color: white;
             border-radius: 50px;
-            padding: 30px;
+            padding: 50px;
             gap: 10px;
             display: grid;
             grid-template-areas: 
+            "headerAddition"
             "header"
             "main"
-            "footer";
+            "footer"
+            "footerAddition";
         }
 
         .header{
@@ -54,14 +56,14 @@
         }
 
         #imageUser{
-            width:50px;
-            height: 50px;
+            width:55px;
+            height: 55px;
             border-radius: 100px;
         }
 
         #imageThreeDotsVertical{
-            width: 35px;
-            height: 35px;
+            width: 38px;
+            height: 50px;
             align-items: flex-end;
         }
 
@@ -75,27 +77,40 @@
         .mainSecondRow{
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-between;   
+            align-items: stretch;
         }
 
         .mainSecondRowleft{
             display: flex;
             flex-direction: row;
-            align-items: flex-start;
         }
 
         #imageMainSecondRow{
-            width: 45px;
+            width: 50px;
+            height: 50px;
+        }
+
+        #imageThreeDotsHorizontal{
+            width: 65px;
             height: 45px;
+            padding-right: 100px;
+        }
+
+        #imageSave{
+            width: 60px;
+            height: 60px;
         }
 
         .footer{
             grid-area: footer;
-            gap: 0;
+            gap: 0;            
         }
 
         .footerContent{
             list-style: none;
+            padding: 0;
+            font-size: larger;
         }
 
         .bolded{
@@ -107,7 +122,7 @@
         }
 
         #username{
-            font-size: 25px;
+            font-size: 20px;
             color: black;
             font-weight: bold;
             text-decoration: none;
@@ -132,30 +147,143 @@
             color: rgb(209, 196, 196);
             text-decoration: none;
         }
+
+        .footerAddition{
+            display: none;
+        }
+
+        .headerAddition{
+            display: none;
+        }
+
+        .footerContentMobile{
+            display: none;
+        }
+
+        @media screen and (min-width: 300px) and (max-width: 600px){
+            body{
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
+                background-color: white;
+            }
+
+            .post{
+                background-color: white;
+                border-radius: 0;
+                padding: 0;
+                gap: 10px;
+                display: grid;
+                grid-template-areas:
+                "headerAddition" 
+                "header"
+                "main"
+                "footer"
+                "footerAddition";
+            }
+            
+            #imageMain{
+                width: 100vw;
+            }
+
+            .header{
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+
+            .footer{
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+
+            .mainSecondRow{
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+
+            #imageThreeDotsHorizontal{
+                display: none;
+            }
+
+            .footerAddition{
+                grid-area: footerAddition;
+                display: flex;
+                flex-direction: row;
+                width: 100vw;
+                background-color: whitesmoke;
+                justify-content: space-evenly;
+            }
+
+            #footerAdditionImage{
+                width: 50px;
+                height: 50px;
+            }
+
+            .headerAddition{
+                grid-area: headerAddition;
+                display: flex;
+                flex-direction: row;              
+                width: 100vw;
+                background-color: whitesmoke;
+                justify-content: space-around;
+            }
+
+            #logo{
+                width: 200px;
+            }
+
+            #headerAdditionImage{
+                width: 50px;
+                height: 50px;
+            }
+
+            .footerContent{
+                display: none;
+            }
+
+            .footerContentMobile{
+                list-style: none;
+                padding: 0;
+                font-size: larger;
+                display: flex;
+                flex-direction: column;
+            }
+
+            #footerLastTextMobile{
+                color: rgb(209, 196, 196);
+                text-decoration: none;
+                font-size: small;
+            }
+        }
+
     </style>
 </head>
 <body>
     <div class="post">
+        <div class="headerAddition">
+            <img id="logo" src="img/logo.png" alt="logo">
+            <img id="headerAdditionImage" src="img/mobile/direct.png" alt="direct">
+        </div>
         <div class="header">
             <div class="leftContentHeader">
-                <img id="imageUser" src="img/profilephoto.png" href="profile photo">
+                <img id="imageUser" src="img/profilephoto.png" alt="profile photo">
                 <ul class="headerText">
                     <li><a id="username" href="">Username</a> </li>
                     <li><a id="location" href="">location</a> </li>
                 </ul>
             </div>
-            <img id="imageThreeDotsVertical" src="img/threedotsvertical.png" href="three dots vertical">
+            <img id="imageThreeDotsVertical" src="img/threedotsvertical.png" alt="three dots vertical">
         </div>
         <div class="main">
-            <img src="img/plainimage.png" href="plain image">
+            <img id="imageMain" src="img/plainimage.png" alt="plain image">
             <div class="mainSecondRow">
                 <div class="mainSecondRowLeft">
-                    <img id="imageMainSecondRow" src="img/like.png" href="like">
-                    <img id="imageMainSecondRow" src="img/comment.png" href="comment">
-                    <img id="imageMainSecondRow" src="img/send.png" href="send">
+                    <img id="imageMainSecondRow" src="img/like.png" alt="like">
+                    <img id="imageMainSecondRow" src="img/comment.png" alt="comment">
+                    <img id="imageMainSecondRow" src="img/send.png" alt="send">
                 </div>
-                <img id="imageMainSecondRow" src="img/threedotshorizontal.png" href="three dots horizontal">
-                <img id="imageMainSecondRow" src="img/save.png" href="safe">
+                <img id="imageThreeDotsHorizontal" src="img/threedotshorizontal.png" alt="three dots horizontal">
+                <img id="imageSave" src="img/save.png" alt="safe">
             </div>
         </div>
         <div class="footer">
@@ -165,6 +293,20 @@
                 <li><a id="footerFourthText" href="">View all 328 comments</a></li>
                 <li><a id="footerLastText" href="">5 days ago</a></li>
             </ul>
+            <ul class="footerContentMobile">
+                <li><a id="footerText" href="">Liked by <span class="bolded">yourfriend, yourfriend </span>and <span class="bolded">36 other</span></a></li>
+                <li><a id="footerText" href=""><span class="bolded">yourname</span> your caption here </a></li>
+                <li><a id="footerText" href=""><span class="hashtag">#yourhashtag #yourhashtag #yourhashtag</span>></a></li>
+                <li><a id="footerText" href="">View all 4 Comments</a></li>
+                <li><a id="footerLastTextMobile" href="">11 minutes ago. <span class="bolded">See translation</span></a></li>
+            </ul>
+        </div>
+        <div class="footerAddition">
+            <img id="footerAdditionImage" src="img/mobile/home.png" alt="home">
+            <img id="footerAdditionImage" src="img/mobile/search.png" alt="home">
+            <img id="footerAdditionImage" src="img/mobile/add.png" alt="home">
+            <img id="footerAdditionImage" src="img/mobile/activity.png" alt="home">
+            <img id="footerAdditionImage" src="img/profile.png" alt="home">
         </div>
     </div>
 </body>

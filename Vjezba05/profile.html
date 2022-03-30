@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body{
+            background-color: palevioletred;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile{
+            min-height: 90%;
+            min-width: 90%;
+            background-color: white;
+            padding: 0 4%;
+            gap: 10px;
+            display: grid;
+            grid-template-areas: 
+            "headerAddition"
+            "header"
+            "main"
+            "footer"
+            "footerAddition";
+        }
+
+        .header{
+            grid-area: header;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 2%;
+            height: 5%;
+        }
+
+        #logo{
+            width: 200px;
+            height: 50px;
+        }
+
+        #headerImage{
+            width: 50px;
+            height: 50px;
+            padding: 0 10px;
+        }
+
+        .main{
+            grid-area: main;
+            display: grid;
+            grid-template-areas: 
+            "mainFirstRow"
+            "mainMobileAddition"
+            "mainSecondRow";
+        }
+
+        .mainFirstRow{
+            grid-area: mainFirstRow;
+            display: flex;
+            flex-direction: row;
+            color: black;
+            justify-content: flex-start;
+            padding-bottom: 60px;
+        }
+
+        .mainSecondRow{
+            grid-area: mainSecondRow;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+
+        #profilePhoto{
+            border-radius: 100px;
+            width: 150px;
+            height: 150px;
+        }
+
+        .mainContent{
+            list-style: none;
+            padding-left: 5%;
+            padding-top: 2%;
+            font-size: larger;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bolded{
+            font-weight: bold;
+        }
+
+        .mainContentRow{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .mainContentSecondRow{
+            display: flex;
+            flex-direction: row;
+            gap: 90px;
+            justify-content: space-between;
+        }
+
+        #message{
+            border: 3px solid whitesmoke;
+            border-radius: 10px;
+            padding: 0 15%;
+        }
+
+        #mainContentImage{
+            width: 40px;
+            height: 30px;
+            margin-top: 0;
+            border: 3px solid whitesmoke;
+            border-radius: 10px;
+        }
+
+        p { margin: 3px 0}
+
+        .mainSecondRowContent{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #profilePhotoSecondRow{
+            border-radius: 100px;
+            border: 2px solid pink;
+            width: 90px;
+            height: 90px;
+        }
+
+        #title{
+            color: grey;
+            font-style: italic;
+        }
+
+        .footer{
+            grid-area: footer;
+            display: grid;
+            gap: 10px;
+            grid-template-areas: 
+            "one two three"
+            "four five six"
+            "seven eight nine";
+        }
+
+        #imageFooter{
+            width: 100%;
+            height: 100%;
+        }
+
+        .one{
+            grid-area: one;
+        }
+
+        .two{
+            grid-area: two;
+        }
+
+        .three{
+            grid-area: three;
+        }
+
+        .four{
+            grid-area: four;
+        }
+
+        .five{
+            grid-area: five;
+        }
+
+        .six{
+            grid-area: six;
+        }
+
+        .seven{
+            grid-area: seven;
+        }
+
+        .eight{
+            grid-area: eight;
+        }
+
+        .nine{
+            grid-area: nine;
+        }
+
+        .footerAddition{
+            display: none;
+        }
+
+        .headerMobile{
+            display: none;
+        }
+
+        .mainFirstRowMobile{
+            display: none;
+        }
+
+        .mainMobileAddition{
+            display: none;
+        }
+
+        .mainSecondRowMobile{
+            display: none;
+        }
+
+        @media screen and (min-width: 300px) and (max-width: 600px){
+            body{
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
+                background-color: white;
+            }
+
+            .post{
+                background-color: white;
+                border-radius: 0;
+                padding: 0;
+                gap: 10px;
+                display: grid;
+                grid-template-areas: 
+                "header"
+                "main"
+                "footer"
+                "footerAddition";
+            }
+
+            .footerAddition{
+                grid-area: footerAddition;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                background-color: whitesmoke;
+                justify-content: space-evenly;
+            }
+
+            #footerAdditionImage{
+                width: 50px;
+                height: 50px;
+            }
+
+            .header{
+                display: none;
+            }
+
+            .headerMobile{
+                grid-area: header;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding:0 5px;
+                height: 5%;
+                font-size: 30px;
+            }
+
+            #headerAdditionImage{
+                width: 50px;
+                height: 50px;
+            }
+
+            .mainFirstRow{
+                display: none;
+            }
+
+            .mainFirstRowMobile{
+                grid-area: mainFirstRow;
+                display: flex;
+                flex-direction: row;
+                color: black;
+                justify-content: flex-start;
+                padding-bottom: 60px;
+                font-size: x-large;
+            }
+
+            #profilePhotoMobile{
+                border-radius: 100px;
+                border: 2px solid orange;
+                width: 150px;
+                height: 150px;
+            }
+
+            .mainContentMobile{
+                list-style: none;
+                padding-left: 0;
+                padding-top: 2%;
+                font-size: larger;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .mainContentRowMobile{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                width: 100vw;
+                padding: 0;
+                margin-top: 35px;
+            }
+
+            .mainMobileAddition{
+                grid-area: mainMobileAddition;
+                display: flex;
+                color: black;
+                justify-content: center;
+            }
+
+            #editProfile{
+                border: 1px solid grey;
+                border-radius: 5px;
+                padding: 1% 43%;
+                margin-bottom: 20px;
+                font-size: larger;
+            }
+
+            .mainSecondRow{
+                display: none;
+            }
+
+            .mainSecondRowMobile{
+                grid-area: mainSecondRow;
+                display: flex;
+                flex-direction: row;
+                gap: 30px;
+                padding-bottom: 50px;
+            }
+
+            #titleMobile{
+                color: grey;
+                font-size: large;
+            }
+
+            #photoSecondRowMobile{
+                border-radius: 100px;
+                border: 2px solid grey;
+                width: 90px;
+                height: 90px;
+            }
+
+            .mainContentSecondRowMobile{
+                display: flex;
+                flex-direction: row;
+                width: 100vw;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile">
+        <div class="header">
+            <img id="logo" src="img/logo.png" alt="logo">
+            <div>
+                <img id="headerImage" src="img/mobile/activity.png" alt="activity">
+                <img id="headerImage" src="img/profile.png" alt="profile">
+            </div>
+        </div>
+        <div class="headerMobile">
+            <p><span class="bolded">yournamehere</span></p>
+            <img id="headerAdditionImage" src="img/mobile/direct.png" alt="direct">
+        </div>
+        <div class="main">
+            <div class="mainFirstRow">
+                <img id="profilePhoto" src="img/profilephoto.png" alt="profilephoto">
+                <div class="mainContent">
+                    <div class="mainContentRow">
+                        <p><span class="bolded">Username</span></p>
+                        <p id="message">Message</p>
+                        <img id="mainContentImage" src="img/following.png" alt="following">
+                        <img id="mainContentImage" src="img/more.png" alt="more">
+                    </div>
+                    <div class="mainContentSecondRow">
+                        <p><span class="bolded">85 </span>posts</p>
+                        <p><span class="bolded">312 </span>followers</p>
+                        <p><span class="bolded">124 </span>following</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mainFirstRowMobile">
+                <div class="mainContentMobile">
+                    <img id="profilePhotoMobile" src="img/profilephoto.png" alt="profilephoto">
+                    <p><span class="bolded">yournamehere</span></p>
+                </div>
+                <div class="mainContent">
+                    <div class="mainContentRowMobile">
+                        <p><span class="bolded">92</span></p>
+                        <p><span class="bolded">840</span></p>
+                        <p><span class="bolded">608</span></p>
+                    </div>
+                    <div class="mainContentSecondRowMobile">
+                        <p>Posts</p>
+                        <p>Followers</p>
+                        <p>Following</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mainMobileAddition">
+                <p id="editProfile">Edit profile</p>
+            </div>
+            <div class="mainSecondRow">
+                <div class="mainSecondRowContent">
+                    <img id="profilePhotoSecondRow" src="img/profilephoto.png" alt="profile photo">
+                    <p id="title">Title</p>
+                </div>
+                <div class="mainSecondRowContent">
+                    <img id="profilePhotoSecondRow" src="img/profilephoto.png" alt="profile photo">
+                    <p id="title">Title</p>
+                </div>
+                <div class="mainSecondRowContent">
+                    <img id="profilePhotoSecondRow" src="img/profilephoto.png" alt="profile photo">
+                    <p id="title">Title</p>
+                </div>
+                <div class="mainSecondRowContent">
+                    <img id="profilePhotoSecondRow" src="img/profilephoto.png" alt="profile photo">
+                    <p id="title">Title</p>
+                </div>
+                <div class="mainSecondRowContent">
+                    <img id="profilePhotoSecondRow" src="img/profilephoto.png" alt="profile photo">
+                    <p id="title">Title</p>
+                </div>
+                <div class="mainSecondRowContent">
+                    <img id="profilePhotoSecondRow" src="img/profilephoto.png" alt="profile photo">
+                    <p id="title">Title</p>
+                </div>
+            </div>
+            <div class="mainSecondRowMobile">
+                <div class="mainSecondRowContent">
+                    <img id="photoSecondRowMobile" src="img/profilephoto.png" alt="profile photo">
+                    <p id="titleMobile">New</p>
+                </div>
+                <div class="mainSecondRowContent">
+                    <img id="photoSecondRowMobile" src="img/profilephoto.png" alt="profile photo">
+                    <p id="titleMobile">Title Here</p>
+                </div>
+                <div class="mainSecondRowContent">
+                    <img id="photoSecondRowMobile" src="img/profilephoto.png" alt="profile photo">
+                    <p id="titleMobile">Title Here</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="one">
+                <a href="post.html"><img id="imageFooter" src="img/plainimage.png" alt="plain image"></a>
+            </div>
+            <div class="two">
+                <img id="imageFooter" src="img/plainimage.png" alt="plain image">
+            </div>
+            <div class="three">
+                <img id="imageFooter" src="img/plainimage.png" alt="plain image">
+            </div>
+            <div class="four">
+                <img id="imageFooter" src="img/plainimage.png" alt="plain image">
+            </div>
+            <div class="five">
+                <img id="imageFooter" src="img/plainimage.png" alt="plain image">
+            </div>
+            <div class="six">
+                <img id="imageFooter" src="img/plainimage.png" alt="plain image">
+            </div>
+            <div class="seven">
+                <img id="imageFooter" src="img/plainimage.png" alt="plain image">
+            </div>
+            <div class="eight">
+                <img id="imageFooter" src="img/plainimage.png" alt="plain image">
+            </div>
+            <div class="nine">
+                <img id="imageFooter" src="img/plainimage.png" alt="plain image">
+            </div>
+        </div>
+        <div class="footerAddition">
+            <img id="footerAdditionImage" src="img/mobile/home.png" alt="home">
+            <img id="footerAdditionImage" src="img/mobile/search.png" alt="home">
+            <img id="footerAdditionImage" src="img/mobile/add.png" alt="home">
+            <img id="footerAdditionImage" src="img/mobile/activity.png" alt="home">
+            <img id="footerAdditionImage" src="img/profile.png" alt="home">
+        </div>
+    </div>
+</body>
+</html>
