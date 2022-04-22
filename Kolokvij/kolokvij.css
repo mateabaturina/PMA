@@ -1,0 +1,188 @@
+body{
+    width: 80vw;
+    max-width: 900px;
+    background-color: rgb(179, 178, 178);
+    border-radius: 50px;
+    gap: 20px;
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "navigation navigation navigation navigation"
+    "personalData resume resume resume"
+    "gallery gallery gallery gallery"
+    "footer footer footer footer";
+}
+
+@font-face {
+    font-family: "MsMadi";
+    src: url("fonts/MsMadi-Regular.ttf");
+}
+
+.header{
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    border: black solid 2px;
+    border-radius: 20px;
+    background-color: rgba(26, 94, 219, 0.336);
+    color: gold;
+    justify-content: center;
+    align-items: center;
+    font-family: MsMadi;
+}
+
+.navigation{
+    grid-area: navigation;
+    display: flex;
+    flex-direction: column;
+    border: black solid 2px;
+    border-radius: 20px;
+    background-color: rgb(109, 243, 109);
+    gap: 10px;
+    padding: 2%;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+.personalData{
+    grid-area: personalData;
+    display: flex;
+    flex-direction: column;
+    border: black solid 2px;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    justify-content: space-evenly;
+    padding: 5%;
+    text-align: center;
+}
+
+.profileScarletWitch{
+    width: 100%;
+    height: 70%;
+    padding: 7% 0;
+}
+
+.ScarletWitchMobile{
+    display: none;
+}
+
+.vazno{
+    font-weight: bolder;
+}
+
+.resume{
+    grid-area: resume;
+    display: flex;
+    flex-direction: column;
+    border: black solid 2px;
+    border-radius: 20px;
+    background-color: rgb(192, 172, 134); 
+    padding: 2%;  
+}
+
+.odlomak::first-letter {
+    color: silver;
+    font-weight: bolder;
+}
+
+.zadnjiOdlomak{
+    color: gold !important;
+    font-style: italic !important;
+    font-weight: bolder !important;
+}
+
+.gallery{
+    grid-area: gallery;
+    display: flex;
+    flex-direction: column;
+    border: black solid 2px;
+    border-radius: 20px;
+    background-color: yellow;
+    gap: 10px;
+    padding: 2%;
+}
+
+#image{
+    width: 280px;
+    height: 230px;
+}
+
+@keyframes uvecaj {
+    0% {
+    transform: scale(1);
+    }
+    100% {
+    transform: scale(1.2);
+    }
+}
+
+ #image:hover{
+    animation-name: uvecaj;
+    animation-duration: 2s;
+} 
+
+.footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    border: black solid 2px;
+    border-radius: 20px;
+    background-color: rgb(154, 140, 235);
+    gap: 10px;
+    padding: 2%;
+    margin-bottom: 15px;
+}
+
+.spremnik{
+    width: 400px;
+}
+
+.footerText{
+    width: inherit;
+}
+
+@media screen and (max-width: 499px){
+
+    body{
+        display: grid;
+        gap: 0;
+        margin: 0;
+        height: 100vh;
+        grid-template-columns: 50vw 50vw;
+        grid-template-areas: 
+        "header navigation"
+        "personalData resume"
+        "gallery footer";
+    }
+
+    #image{
+        width: 46vw;
+        height: 230px;
+    }
+
+    .footer{
+        margin-bottom: 0;
+    }
+
+    .spremnik{
+        width: 50vw;
+    }
+
+    .profileScarletWitch{
+        display: none;
+    }
+
+    .ScarletWitchMobile{
+        display: block;
+        max-width: 100%;
+        max-height: 70%;
+        padding: 7% 0;
+    }
+
+}
