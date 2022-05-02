@@ -21,7 +21,9 @@ let movie3 = {
 let movies = [movie1, movie2, movie3];
 
 
-let rise = (niz) => {
+let calculate = (niz) => {
     let sum = Utils.sumOscars(niz);
-    return sum;
+    console.log(sum);
 }
+
+let a = calculate(movies);

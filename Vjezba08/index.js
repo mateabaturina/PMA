@@ -1,7 +1,10 @@
 import * as Utils from './utils.js';
+import * as Oscars from './oscars.js';
 
-console.log(Utils.zbroji(2, 13));
-console.log(Utils.square(5));
+// console.log(Utils.zbroji(2, 13));
+// console.log(Utils.square(5));
+
+Oscars.a;
 
 // pozdrav();
 

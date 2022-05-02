@@ -7,10 +7,10 @@ export function square(a){
     return result;
 }
 
-countOscars = 0
+let countOscars = 0
 
 export function sumOscars(niz){
-    for (i=0; i<niz.length; i++){
+    for (let i=0; i<niz.length; i++){
         let {oscars:oscarsMovies} = niz[i];
         countOscars += oscarsMovies;
     }
