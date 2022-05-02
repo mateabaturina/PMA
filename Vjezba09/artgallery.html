@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+        
+        body{
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+
+            display: grid;
+            grid-template-columns: 0.3fr 1fr;
+            grid-template-rows: 30% 1fr 10%;
+
+            grid-template-areas: 
+            "aside header "
+            "aside main "
+            "footer footer";
+
+            font-family: 'League Gothic',sans-serif;
+            font-size: 1.5em;
+          
+        }
+     
+        .aside{
+            background-color: chocolate;
+            color: black;
+            grid-area: aside;
+            /* display: none; */
+        }
+
+        .header{
+            grid-area: header;
+            
+            
+            color: white;
+            height: 30vh;
+            /*-----*/
+            background-color: black;
+           
+            /*-----*/
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: center;
+        }
+        .header::after{
+            background: black;
+        }
+        .header> h1{
+            flex: 1;
+            text-align: center;
+        }
+        .header>h1,.footer>h1{
+            font-size: 4rem;
+        }
+        .intro{
+            flex: 1;
+            margin: 100px;
+        }
+        .main{
+            grid-area: main;
+        }
+        .footer{
+            grid-area: footer;
+            background-color: black;
+            color:white;
+
+
+            /*------*/
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            justify-items: center;
+            align-items: center;
+        }
+        .aside,.main,.header,.footer{
+            padding: 20px;
+        }
+    
+        .content{
+            margin: 50px;
+            padding: 20px;
+            /* background-color: beige; */
+            display: grid;
+            min-height: 50%;
+            grid-template-columns: repeat(3,1fr);
+     
+            justify-content: center;
+            align-self: center;
+            gap: 20px;
+        }
+        .contentcell,.first-row{
+            background-color: white;
+            padding: 5px;
+            min-height: 33vh;
+        }
+        .first-row{
+            grid-column: 1/4;
+            display: flex;
+            flex-direction: row;
+        }
+        .contentcell>img, .image>img{
+            width: 100%;
+            height: 100%;
+        }
+        .first-row>#text1{
+            flex: 1;
+            padding: 50px;
+        }
+        .first-row>#image{
+            flex: 2;
+        }
+       
+         #text1,#text2{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content:center;
+        }
+        
+        .contentcell#text2{
+            background-color: black;
+            color: white;
+            padding: 50px;
+        }
+        .contentcell.image:nth-of-type(3){
+            grid-row: 2/4;
+            grid-column: 1/3;
+        }
+        
+        li::marker{
+            content: "";
+        }
+        li{
+            margin: 5px;
+        }
+        a{
+            color: black;
+        }
+        /**/
+        /*media-queries*/
+
+        @media screen and (max-width: 750px) {
+            body{
+                min-height: 100vh;
+            margin: 0;
+            padding: 0;
+
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 30% 0.3fr 3fr 1fr;
+
+            grid-template-areas: 
+            "header"
+            "aside"
+            "main"
+            "footer";
+
+            font-family: 'League Gothic',sans-serif;
+            font-size: 2rem;
+            }
+            .header{
+                flex-direction: column;
+                height: 100%;
+            }
+            .header>h1{
+                font-size: 3em;
+                border: 1px solid white;
+                border-radius: 10px;
+                padding: 3px;
+            }
+            .aside>h1{
+                display: none;
+            }
+            .aside>ul{
+                height: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .footer{
+                gap: 20px;
+                display: flex;
+                flex-direction: column;
+
+                
+            }
+            .footer>h1{
+                padding: 3px;
+                font-size: 1.5em;
+                border: 1px solid white;
+                border-radius: 10px;
+            }
+            .footer>div:first-of-type{
+                width: 40VW;
+            }
+            .first-row{
+                grid-row: 1/3;
+                flex-direction: column;
+               
+            } 
+             #text1{
+                flex: 3;
+            }
+            .first-row>img{
+                flex: 1;
+            }
+            .content{
+              padding: 5px;
+              display: flex;
+               flex-direction: column;
+            } 
+           
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="aside">
+        <h1 class="title">University <br> Art Gallery</h1>
+        <ul id="menu">
+            <li><a href="">Home</a> </li>
+            <li><a href="">About</a> </li>
+            <li><a href="">Exhibitions</a> </li>
+            <li><a href="">Contact Us</a> </li>
+        </ul>
+    </div>
+    <div class="header">
+        <h1 class="title">University <br> Art Gallery </h1>
+        <div class="intro">
+            The arts in the collection of the modern art gallery all 
+            started from a spark of inspiration. Visit us and find out if these
+            pieces will inspire you.  
+        
+        </div>
+       </div>
+    <div class="main">
+
+        <div class="content">
+
+            <div class="first-row">
+            <div class="contentcell" id="text1"><h1>Your day at the gallery</h1> <p>Wander through our distinct collections and find new insights about our artists. Dive into details of their creative process</p></div>
+            <div class="contentcell" id="image"><img src="https://images.unsplash.com/photo-1507643179773-3e975d7ac515?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2FsbGVyeXxlbnwwfHwwfHw%3D&w=1000&q=80" alt=""></div> </div>    
+            <div class="contentcell image" id="second"><img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0JTIwZ2FsbGVyeXxlbnwwfHwwfHw%3D&w=1000&q=80" alt=""></div>
+            <div class="contentcell image" id="third"><img src="https://imagebee.org/patterns/gallery/gallery-1-3872x2592.jpg" alt=""></div>
+            <div class="contentcell" id="text2"><h1>Come & be inspired</h1> <p>
+                We're excited to welcome you to our gallery and see how our collections influence you.</p></div>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <h1 class="title">University <br> Art Gallery</h1>
+        <div class="info">The University Art Gallery is open seven days a week from 8:00 AM to 10:00 PM</div>
+        <div class="contact">
+            Ruđera Boškovića 33
+            <br>
+            21000 Split
+            <br>
+            uniartgallery@gallery.com
+            <br>
+            +38521123456
+        </div>
+    </div>
+    <script src="artgallery.js"></script>
+</body>
+</html>
