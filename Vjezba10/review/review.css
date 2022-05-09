@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: linear-gradient(#e66465, #9198e5);
+    display: grid;
+    justify-items: center;
+    /* align-content:; */
+    gap: 50px;
+}
+.card{
+    background-color: white;
+    width: 500px;
+    height: 45vh;
+    border-radius: 30px;
+    /* justify-self: center; */
+}
+#data{
+    display: grid;
+    grid-template-columns: 30% 50%;
+    grid-template-rows: 25% 25% 50%;
+    grid-template-areas: ". ."
+    ". ."
+    "rev rev";
+    justify-content: center;
+    align-items: center;
+}
+#data>label{
+    justify-self:center;
+}
+#reviewinsert{
+
+    grid-area: rev;
+    height: 75%;
+}
+
+#preview{
+    padding:20px 0px;
+    height: 45vh;
+    display: grid;
+    grid-template-rows: 10% 80%;
+}
+#header{
+    margin-left: 20px;
+    display: flex;
+    justify-self: center;
+    justify-content: flex-start;
+    gap: 10px;
+    /* margin: 10px; */
+}
+
+#review{
+    /* align-items: center; */
+    width: 80%;
+    justify-self: center;
+    border-top: 5px solid grey;
+
+    /*font*/
+    color: black ;
+    font-style: italic;
+
+}
+
+#uname,#ulocation{
+    /*font and color*/
+    color: lightslategrey;
+    align-self: center;
+}
+#ulocation{
+    font-size: smaller;
+}
+

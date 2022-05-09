@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="movies.css">
+    <title>Movies List</title>
+  </head>
+  <body>
+  	<div id="wrapper">
+	    <header>
+	    	<div id="page-banner">
+	    		<h1 class="title">Movies list</h1>
+          <p>list of movies to watch</p>
+          <form id="add-movie">
+	    	<input type="text" placeholder="Add a movie..." />
+	    	<button>Add</button>
+	    </form>
+	    	</div>
+	    </header>
+	    <div id="movie-list">
+	    	<h2 class="title">Movies to watch:</h2>
+	    	<ul>
+	    		<li>
+	    			<span class="watched"></span><span class="name">Titanic</span> <span class="delete">Delete</span>
+	    		</li>
+	    		<li>
+	    			<span class="watched"></span><span class="name">Rocky</span> <span class="delete">Delete</span>
+	    			
+	    		</li>
+	    		<li>
+	    			<span class="watched"></span><span class="name">The Godfather</span><span class="delete">Delete</span>
+	    			
+	    		</li>
+	    		<li>
+	    			<span class="watched"></span><span class="name">Good Will Hunting</span>
+	    			<span class="delete">Delete</span>
+	    		</li>
+	    	</ul>
+			
+	    </div>
+	    <div id="footer">
+			<span id="label"><span id="nb"></span> movies to watch</span>
+			<span id="options">
+				<span id="all" class="filter">
+					All
+				</span>
+				<span id="watched" class="filter">Watched</span>
+				<span id="towatch" class="filter">To Watch</span>
+			</span>
+		</div>
+
+    </div>
+    <script src="movies2.js"></script>
+  </body>
+</html>
