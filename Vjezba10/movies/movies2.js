@@ -33,6 +33,7 @@ addForm.addEventListener('submit', (e)=>{
   li.appendChild(btn);
 
   list.appendChild(li);
+  changeColor();
 });
 
 document.querySelector('body').addEventListener('click', (e)=>{
@@ -50,3 +51,20 @@ document.querySelector('body').addEventListener('click', (e)=>{
   }
 });
 
+document.querySelector('body').addEventListener('click', (e)=>{
+  if (e.target.className == 'watched'){  
+    e.target.style.backgroundColor = "#8FDE31";
+  }
+});
+
+function changeColor() {
+  const list = document.querySelectorAll('li');
+  for (let i = 0; i < list.length; i++) {
+    if(i % 2 == 0) { 
+      list[i].style.color = "#8FDE31";
+    }
+    else {
+      list[i].style.backgroundColor = "#2BBB44";
+    }
+  }
+}
