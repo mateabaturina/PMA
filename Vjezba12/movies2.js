@@ -8,7 +8,7 @@
 //     .catch(err=> console.log(err))
 //     })
 
-// document.getElementById('twenty').addEventListener('click',()=>{
+// document.getElementById('twenty).addEventListener('click',()=>{
 //     fetch('https://imdb-api.com/en/API/Top250Movies/k_6vyn5foe')
 //     .then(res=> res.json())
 //     .then(data=> {
@@ -24,53 +24,103 @@
 
 //2. Zadatak
 
+const list = document.querySelector('#movie-list ul');
+const forms = document.forms;
+
+const addForm = forms['add-movie'];
+
 document.getElementById('twenty').addEventListener('click',()=>{
     fetch('https://imdb-api.com/en/API/Top250Movies/k_6vyn5foe')
     .then(res=> res.json())
     .then(data=> {
         for(let i = 0;i<20;i++){
             n = Math.floor((Math.random() * 250) + 1);
-            document.getElementById('movie-list').innerText += `fulltitle: ${data.items[n].fullTitle} year: ${data.items[n].year} IMDb: ${data.items[n].imDbRating}\n`;
-    
+            const li = document.createElement('li');
+            //document.getElementById('movie-list').innerHTML += `<img src= ${data.items[n].image}> fulltitle: ${data.items[n].fullTitle} year: ${data.items[n].year} IMDb: ${data.items[n].imDbRating}\n`;
+            const watched = document.createElement('span');
+            watched.className = 'watched'
+            watched.innerHTML =  `<img src= ${data.items[n].image}>`
+            li.appendChild(watched);
+
+            const textspan = document.createElement('span');
+            textspan.className = 'name'
+            textspan.textContent = `Title: ${data.items[n].fullTitle}`;
+            li.appendChild(textspan);
+
+            const year = document.createElement('span');
+            year.className = 'year'
+            year.textContent = `Year: ${data.items[n].year}`;
+            li.appendChild(year);
+
+            const rate = document.createElement('span');
+            rate.className = 'rating';
+            rate.textContent = `imDB: ${data.items[n].imDbRating}`;
+            li.appendChild(rate);
+
+            const btn = document.createElement('span');
+            btn.className = 'delete'
+            btn.textContent = "Delete";
+            li.appendChild(btn);
+
+            list.appendChild(li);
+
+            if (data.items[n].imDbRating > 8.5) {
+                li.style.backgroundColor = "#2BBB44";
+            }
         }
     })
     .catch(err=> console.log(err))
     })
 
-const list = document.querySelector('#movie-list ul');
-const forms = document.forms;
-
-
-// dodavanje filma
-const addForm = forms['add-movie'];
+    document.querySelector('body').addEventListener('click', (e)=>{
+        if (e.target.className == 'delete'){  
+          list.removeChild(e.target.parentElement);
+        }
+      });
 
 
 addForm.addEventListener('submit', (e)=>{
     e.preventDefault();
+    
+    fetch('https://imdb-api.com/en/API/SearchMovie/k_6vyn5foe/'+addForm.querySelector('input[type="text"]').value)
+    .then(res=> res.json())
+    .then(data=> {
+        console.log(data.results);
+        for(let i = 0;i<9;i++){
+            const li = document.createElement('li');
+            //document.getElementById('movie-list').innerHTML += `<img src= ${data.items[n].image}> fulltitle: ${data.items[n].fullTitle} year: ${data.items[n].year} IMDb: ${data.items[n].imDbRating}\n`;
+            // const watched = document.createElement('span');
+            // watched.className = 'watched'
+            // watched.innerHTML =  `<img src= ${data.items.image}>`
+            // li.appendChild(watched);
 
-    //upisana vrijednost u textbox
-    const movieToAdd = addForm.querySelector('input[type="text"]').value;
+            // const textspan = document.createElement('span');
+            // textspan.className = 'name'
+            // textspan.textContent = `Title: ${data.items.fullTitle}`;
+            // li.appendChild(textspan);
 
-    //Vaše rješenje napišite ispod ove linije....
-    //potrebno je dodati li s nazivom filma
-    //te botun s opcijom za brisanje
+            // const year = document.createElement('span');
+            // year.className = 'year'
+            // year.textContent = `Year: ${data.items.year}`;
+            // li.appendChild(year);
 
-    const li = document.createElement('li');
+            // const rate = document.createElement('span');
+            // rate.className = 'rating';
+            // rate.textContent = `imDB: ${data.items.imDbRating}`;
+            // li.appendChild(rate);
 
-    const watched = document.createElement('span');
-    watched.className = 'watched'
-    li.appendChild(watched);
+            // const btn = document.createElement('span');
+            // btn.className = 'delete'
+            // btn.textContent = "Delete";
+            // li.appendChild(btn);
 
-    const textspan = document.createElement('span');
-    textspan.className = 'name'
-    textspan.textContent = movieToAdd;
-    li.appendChild(textspan);
+            // list.appendChild(li);
 
-    const btn = document.createElement('span');
-    btn.className = 'delete'
-    btn.textContent = "Delete";
-    li.appendChild(btn);
-
-    list.appendChild(li);
-    changeColor();
-});
+            // if (data.items.imDbRating > 8.5) {
+            //     li.style.backgroundColor = "#2BBB44";
+            // }
+        }
+    })
+    .catch(err=> console.log(err))
+    
+    })
