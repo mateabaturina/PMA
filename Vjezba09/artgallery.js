@@ -4,14 +4,17 @@ asid.style.backgroundColor = "#EF2FD2"
 let heade = document.querySelector('.header');
 heade.style.backgroundColor = "#5D0750"
 
-let intr = document.querySelector('.intro');
-heade.innerHTML = `<h1>University <br> Art Gallery <br> Podnaslov</h1>
-<div class="intro">
-            The arts in the collection of the modern art gallery all 
-            started from a spark of inspiration. Visit us and find out if these
-            pieces will inspire you.  
-        
-        </div>`;
+let naslov0 = document.querySelectorAll(".title");
+
+for (let i = 0; i < naslov0.length; i++) {
+    if(i == 1){
+        let subtitle = document.createElement('p');
+        subtitle.innerText = "Podnaslov";
+        subtitle.style.fontSize = "medium";
+        naslov0[i].appendChild(subtitle);
+    }
+};
+
 
 let foote = document.querySelector('.footer');
 foote.style.backgroundColor = "#5D0750";
@@ -24,9 +27,27 @@ for (let i = 0; i < contentcel.length; i++) {
     contentcel[i].style.border = "5px solid black";
 };
 
-// let list = document.querySelector('#menu>li');
+let evenLis = document.querySelectorAll('#menu li:nth-of-type(even)');
 
+let naslovi = document.querySelectorAll('.title');
 
+var changeColor = function (a, b) {
+    for (let i = 0; i < a.length; i++) {
+        a[i].style.color = b;
+    };
+};
 
-// let naslov = document.querySelectorAll('.title');
-// naslov.style.color = "#D6EB22";
+changeColor(evenLis, "orange");
+changeColor(naslovi, "#D6EB22");
+
+let naslov = document.querySelectorAll(".title");
+
+var podnaziv = function (a) {
+    for (let i = 0; i < a.length; i++) {
+        let subtitle = document.createElement('p');
+        subtitle.innerText = "Podnaslov";
+        subtitle.style.fontSize = "medium";
+        a[i].appendChild(subtitle);
+    };
+};
+
