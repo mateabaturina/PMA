@@ -1,0 +1,45 @@
+body{
+  background-color: rgb(220, 240, 103);
+}
+
+h1{
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(5, 105, 43);
+}
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.osnovno{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px dotted red;
+  border-radius: 1px;
+  width: 30%;
+  margin: auto;
+  padding: 10px;
+  background-color: rgb(240, 167, 234);
+}
+
+h2{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.detaljni_prikaz{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid white;
+  border-radius: 20px;
+  width: 30%;
+  margin: 15px auto;
+  padding: 10px;
+  background-color: rgb(44, 204, 232);
+}
+
+#detalji p {
+  margin: 1px
+}
+
